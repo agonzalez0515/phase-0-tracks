@@ -1,0 +1,27 @@
+.ocean {
+	position: relative;
+	margin-top:80px;
+	margin-left:250px;
+	
+}
+
+#hat {
+	position:relative;
+	top:85px; 
+	z-index: 10;
+
+}
+
+#glasses {
+	position:relative;
+	top: 330px;
+	left:50px;
+
+}
+
+#octopus {
+	position: absolute;
+	left:10px;
+	z-index: -1;
+	
+}
