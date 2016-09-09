@@ -1,21 +1,21 @@
 .ocean {
 	position: relative;
-	margin-top:80px;
+	margin-top:50px;
 	margin-left:250px;
 	
 }
 
 #hat {
 	position:relative;
-	top:85px; 
+	top:90px; 
 	z-index: 10;
 
 }
 
 #glasses {
 	position:relative;
-	top: 330px;
-	left:50px;
+	top: 331px;
+	left:52px;
 
 }
 
