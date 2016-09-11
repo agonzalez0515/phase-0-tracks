@@ -17,3 +17,10 @@ section#contact-info{
 
 section#volunteer-experience:hover {
     background-color: #e6ffff;
+}
+
+.volunteer-gig
+	ul > li {
+		font-style: italic;
+		font-size: .8em; 
+}
