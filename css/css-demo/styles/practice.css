@@ -1,0 +1,26 @@
+section#contact-info{
+	font-size: .8em;
+}
+.job {
+	border-radius: 25px;
+    background: #e9e5dc;
+    padding-top: 1px;
+    padding-left: 15px;
+    padding-bottom: 20px; 
+    margin-top: 10px; 
+    width: 600px;
+}
+
+.accomplishments{
+	font-size: .8em;
+}
+
+section#volunteer-experience:hover {
+    background-color: #e6ffff;
+}
+
+.volunteer-gig
+	ul > li {
+		font-style: italic;
+		font-size: .8em; 
+}
