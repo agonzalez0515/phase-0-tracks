@@ -1,0 +1,44 @@
+#Robot in an Elevator
+
+#look for elevator buttons to the right of doors
+#walk up to the panel and stop
+#press top button with robot finger
+#wait until elevator arrives and doors open
+#walk into elevator 
+#turn around to face doors
+#walk to right side of doors
+#press button with number 5
+#wait 
+#look at floors being counted at top of doors
+#exit through doors if elevator is on floor 5
+
+#Brush Teeth
+
+#locate toothbrush in cup
+#lift toothbrush out of cup
+#hold toothbrush in hand
+#locate toothpaste in cup
+#lift toothpaste out of cup
+#hold toothpase in hand not holding toothbrush
+#apply light pressure to toothpaste until .002oz comes out
+#place paste on top of bristles of toothbrush
+#put toothpaste back into cup
+#lift toothbrush into inside top right side of mouth
+#move brush in back and forth motion
+#repeat 3 times
+	#top left side of mouth
+	#bottom right side of mouth
+	#bottom left side of mouth
+#if finished, return toothbrush to cup
+#spit into sink toothpaste in mouth
+#turn sink faucet handle on the right to the right
+#locate empty cup on sink countertop on the left side
+#lift cup
+#place cup underneath water for 5 seconds
+#turn faucet handle to the left until it stops
+#bring cup up to mouth 
+#allow water to enter mouth
+#do not swallow water
+#spit water into sink
+#put cup back on countertop
+
