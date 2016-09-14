@@ -34,7 +34,7 @@ def hamster_survey
 
 	estimated_age.to_f
 
-	puts "The hamster's name is #{name}." 
+	puts "The hamster's name is #{name}."  
 	puts "The hamster is #{volume} level."
 	puts "It's fur color is #{fur_color}."
 	puts "The hamster is a good candidate? #{good_candidate}" unless good_candidate == nil 
