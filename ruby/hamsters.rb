@@ -5,6 +5,7 @@ def hamster_survey
 			name = Harry 
 		end
 
+
 	puts "How loud is you hamster (from 1 to 10)?"
 	volume = gets.chomp.to_i
 	# volume.to_i
@@ -30,6 +31,13 @@ def hamster_survey
 		if estimated_age == ""
 			estimated_age = nil
 		end
+
+
+	puts "The hamster's name is #{name}."
+	puts "The hamster is #{volume} level."
+	puts "It's fur color is #{fur_color}."
+	unless good_candidate == nil puts "The hamster is a good candidate? #{good_candidate}"
+	puts "The estimated age of the hamster is #{estimated_age}."
 end
 
 hamster_survey 
