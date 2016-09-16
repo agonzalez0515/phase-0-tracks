@@ -1,4 +1,7 @@
-
+# encrypt pseudocode: 
+#	-get password from user
+#	-advance each letter by 1 letter alphabetically
+#   -output new encrypted password
 
 def encrypt(pass)
 	for i in 0...pass.length
@@ -15,44 +18,47 @@ def encrypt(pass)
 	pass
 end
 
-# encrypt pseudocode: 
-#	-Get string
-#	-advance each letter 1 alphabetically
+#decrpyt pseudocode:
+#	-get encrypted password from user
+#	-go back one letter alphabetically
+#   -output decrypted password
+
 
 def decrypt(encrypted_pass)
 	alphabet = "abcdefghijklmnopqrstuvwxyz"
 	for i in 0...encrypted_pass.length
-		if encrypted_pass[i] == " "
-			next
-		else
-			encrypted_pass[i] = alphabet[alphabet.index(encrypted_pass[i])-1]
-		end
+		encrypted_pass[i] = alphabet[alphabet.index(encrypted_pass[i])-1]
 	end
 #	puts encrypted_pass
 	encrypted_pass
 end
 
-#decrpyt pseudocode:
-#	-get encrypted string
-#	-go back one letter alphabeticall
+#TESTS
 
-encrypt("abc") 
-encrypt("zed") 
-decrypt("bcd") 
-decrypt("afe") 
+#encrypt("abc") 
+#encrypt("zed") 
+#decrypt("bcd") 
+#decrypt("afe") 
 
-decrypt(encrypt("swordfish"))
+#decrypt(encrypt("swordfish"))
 # This works because the implicit return of the encrypt method is a string.
+
+
 
 #Interface pseudocode:
 #	- Ask user if they want to decrypt or encrypt
-# 	- Ask for password
-# 	- Do encrypt or decrypt depending on first answer
+# 	- Ask usr for password
+# 	- Do encrypt or decrypt method depending on first answer
 # 	- Print result
 
-puts "Do you want to decrypt on encrypt"
-encrypt = gets.chomp.downcase == "encrypt"
+
+ls
+#DRIVER CODE
+puts "Do you want to encrypt or decrypt your password?"
+	encrypt = gets.chomp.downcase == "encrypt"
+
 puts "Password?"
+
 if encrypt
 	p encrypt(gets.chomp)
 else
