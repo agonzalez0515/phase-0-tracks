@@ -1,11 +1,9 @@
-#ask questions to employees
-
-
-
+#ask employee questions to determine if they're a vampire
 
 	def vampire_test
+		
 		puts "How many employees will be processed?"
-		number_of_employees = gets.chomp.to_i
+			number_of_employees = gets.chomp.to_i
 		
 		while number_of_employees > 0
 			number_of_employees = number_of_employees - 1
@@ -40,10 +38,11 @@
 		
 
 			allergies = " "
-			puts "Please list all allergies. Type done when finished."
-
+				puts "Please list all allergies. Type done when finished."
+			
+			#loop so that employee can list multiple allergies
 			until allergies == "done" || allergies == "sunshine"
-			allergies = gets.chomp
+				allergies = gets.chomp
 			end
 
 				if allergies == "sunshine"
@@ -52,6 +51,8 @@
 					allergies = false 	
 				end
 
+			
+			#conditional block
 			
 			if allergies 
 				puts "Probably a vampire"
@@ -74,14 +75,20 @@
 				
 			end
 		
-						#prints employee answers
-						puts "The employee's name is #{name}."
-						puts "They are #{age} years old and born in the year #{year_born}."
-						puts "Does the employee want garlic bread? #{wants_garlic_bread}."
-						puts "Does the employee want health insurance? #{wants_health_insurance}."
-		
+		#prints employee answers
 
+			puts "The employee's name is #{name}."
+			puts "They are #{age} years old and born in the year #{year_born}."
+			puts "Does the employee want garlic bread? #{wants_garlic_bread}."
+			puts "Does the employee want health insurance? #{wants_health_insurance}."
+			puts "Sunshine allergies? #{allergies}"
+				
 		end
+
+		
+#plot twist!
+puts "Actually, never mind! What do these questions have to do with anything? Let's be friends."
+		
 	end
 
 
