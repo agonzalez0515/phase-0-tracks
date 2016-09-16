@@ -1,34 +1,6 @@
 #ask questions to employees
 
 
-
-
-
-
-#if some_boolean_variable
-#  puts "some_boolean_variable is true!"
-#else
-#  puts "some_boolean_variable is false!"
-#end
-
-
-#It think the portion where the directions state `Your program should base its 
-#result on the latest condition matched, not the first condition matched.` 
-#is referring to the && and || operators
-
-
-
-#elsif name == "Drake Cula"
-	#	puts "Definitely a vampire"
-
-#	elsif name == "Tu Fang"
-		#puts "Definitely a vampire"
-
-#	else
-#		"Results inconclusive"
-
-
-
 def vampire_test
 	puts "What is your name?"
 		name = gets.chomp
@@ -78,8 +50,16 @@ def vampire_test
 
 
 
+puts "The employee's name is #{name}"
+puts "The employee is #{age} years old"
+puts "The employee was born in the year #{year_born}"
+puts "Does the employee want garlic bread? #{wants_garlic_bread}"
+puts "Does the employee want health insurance? #{wants_health_insurance}"
+
+
 end
 
 vampire_test
+
 
 
