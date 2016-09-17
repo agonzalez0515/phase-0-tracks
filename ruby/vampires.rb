@@ -1,3 +1,4 @@
+
 #ask employee questions to determine if they're a vampire
 
 	def vampire_test
@@ -22,6 +23,7 @@
 
 		puts "Our company cafeteria serves garlic bread. Should we order some for you? (y/n)"
 			wants_garlic_bread = gets.chomp
+			
 				if wants_garlic_bread == "y"
 					wants_garlic_bread = true
 				else 
@@ -30,6 +32,7 @@
 
 		puts "would you like to enroll in the company's health insurance? (y/n)"
 			wants_health_insurance = gets.chomp
+
 				if wants_health_insurance == "y"
 					wants_health_insurance = true
 				else 
