@@ -7,22 +7,27 @@
  "iNvEsTiGaTiOn".swapcase
 # => “InVeStIgAtIoN”
 
-"zom".insert(2, 'o')# 
+"zom".insert(2, 'o')
 # => “zoom”
 
-# "enhance".<???>
+"enhance".center(20)
 # => "    enhance    "
 
-# "Stop! You’re under arrest!".<???>
+ "Stop! You’re under arrest!".upcase
+ "Stop! You’re under arrest!".upcase!
 # => "STOP! YOU’RE UNDER ARREST!"
 
-# "the usual".<???>
+a = "the usual"
+a << " suspects"
+
+"the usual".insert(9, " suspects")
 #=> "the usual suspects"
 
-# " suspects".<???>
+
+" suspects".insert(0, "the usual")
 # => "the usual suspects"
 
-# "The case of the disappearing last letter".<???>
+"The case of the disappearing last letter".chop
 # => "The case of the disappearing last lette"
 
 # "The mystery of the missing first letter".<???>
