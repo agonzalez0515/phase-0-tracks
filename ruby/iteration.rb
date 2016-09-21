@@ -13,5 +13,19 @@ happy_birthday { |first, last| puts "Wishing you a great birthday,
 
 fav_colors = ["pink", "purple", "blue", "red", "black"]
 
-name_age = {'mary' => 20, 'rebecca' => 30, 'john' => 40 }
+puts "Favorite Colors:"
+p fav_colors
+
+fav_colors.each do |color|
+	puts "My favorite color is #{color}."
+end
+
+
+puts "After .each call:"
+p fav_colors
+
+
+#name_age = {'mary' => 20, 'rebecca' => 30, 'john' => 40 }
+
+
 
