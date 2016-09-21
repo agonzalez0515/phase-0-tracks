@@ -44,7 +44,7 @@
 		color.upcase
 	 
 	end
-#Can also be written as fav_colors.map! {|color| color.upcase}
+#Can also be written as `fav_colors.map! {|color| color.upcase}`
 
 	puts "After .map call:"
 	p fav_colors
@@ -64,7 +64,7 @@
 	p fav_colors
 
 
-#This is the take while method
+#This is the drop while method
 	new_colors = fav_colors.drop_while {|color| color.length < 4}
 
 
@@ -72,34 +72,33 @@
 
 
 #This is the hash
-
-name_age = {'mary' => 20, 'rebecca' => 30, 'john' => 40 }
-puts "Original data:"
-p name_age
-
+	name_age = {'mary' => 20, 'rebecca' => 30, 'john' => 40 }
+	puts "Original data:"
+	p name_age
 
 
-#This is the each method for the hash
-name_age.each do |name, age|
-	puts "#{name} is #{age} years old!"
-end
 
-puts "After .each call:"
-p name_age
+#iterate through the array with .each
+	name_age.each do |name, age|
+		puts "#{name} is #{age} years old!"
+	end
+
+	puts "After .each call:"
+	p name_age
 
 
 #This is the delete method for the hash
-name_age.delete_if {|name, age| age < 35}
-p name_age
+	name_age.delete_if {|name, age| age < 35}
+	p name_age
 
 
 #This is the keep method for the hash
-name_age.keep_if {|name, age| name.length == 4}
-p name_age
+	name_age.keep_if {|name, age| name.length == 4}
+	p name_age
 
 
 #This is the reject method for the hash
-name_age.reject! {|name, age| name.length == 4}
-p name_age
+	name_age.reject! {|name, age| name.length == 4}
+	p name_age
 
 
