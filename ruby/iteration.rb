@@ -8,7 +8,7 @@ end
 
 happy_birthday { |first, last| puts "Wishing you a great birthday, 
 #{first} #{last}" }
-=end
+
 
 
 fav_colors = ["pink", "purple", "blue", "red", "black"]
@@ -43,12 +43,30 @@ end
 
 puts "After .map call:"
 p fav_colors
+=end
+
+
+
+
+name_age = {'mary' => 20, 'rebecca' => 30, 'john' => 40 }
+puts "Original data:"
+p name_age
+
+name_age.each do |name, age|
+	puts "#{name} is #{age} years old!"
+end
+
+puts "After .each call:"
+p name_age
 
 
 
 
 
-#name_age = {'mary' => 20, 'rebecca' => 30, 'john' => 40 }
+
+
+
+
 
 
 
