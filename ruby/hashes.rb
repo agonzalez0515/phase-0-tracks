@@ -20,6 +20,7 @@ client {
 
 
 #driver code aka the client's application
+
 client = {} #or hash.new
 	puts "Please answer the following questions"
 
