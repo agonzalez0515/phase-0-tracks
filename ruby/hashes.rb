@@ -42,7 +42,20 @@ client = {} #or hash.new
 	puts "Do you live in a high rise?"
 	client[:high_rise] = gets.chomp
 
-
-
+	puts "Thank you for the information. Do you need to update
+	any entry? y/n"
+		wants_to_update = gets.chomp
+		
+		if wants_to_update == "y"
+			wants_to_update = true
+			puts "Please type category you would like to update"
+			new_category = gets.chomp.to_sym
+			puts "Please type new answer"
+			client[new_category] = gets.chomp
+		else wants_to_update = false
+			
+		end
+		
+	
 p client
 
