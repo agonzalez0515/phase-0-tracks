@@ -14,14 +14,14 @@ client {
 	number_of_children: ,
 	decor_theme: ,
 	number_of_rooms: ,
-	high_rise: ,
+	high_rise: 
 }
 =end
 
 
 #driver code aka the client's application
 
-client = {} #or hash.new
+client = {} 
 	puts "Please answer the following questions"
 
 	puts "Name"
@@ -52,6 +52,7 @@ client = {} #or hash.new
 			new_category = gets.chomp.to_sym
 			puts "Please type new answer"
 			client[new_category] = gets.chomp
+			
 		else wants_to_update = false
 			
 		end
