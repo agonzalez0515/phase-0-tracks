@@ -29,4 +29,14 @@ def translate_phrase (phrase)
   translated_response
 end
 
-puts translate_phrase("Happy Halloween!")
+
+while true
+  puts "What would you like to translate?"
+    answer = gets.chomp
+  puts translate_phrase(answer)
+
+  if answer == "quit"
+    break
+  end
+end
+

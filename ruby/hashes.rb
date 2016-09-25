@@ -14,14 +14,14 @@ client {
 	number_of_children: ,
 	decor_theme: ,
 	number_of_rooms: ,
-	high_rise: ,
+	high_rise: 
 }
 =end
 
 
 #driver code aka the client's application
 
-client = {} #or hash.new
+client = {} 
 	puts "Please answer the following questions"
 
 	puts "Name"
@@ -42,7 +42,37 @@ client = {} #or hash.new
 	puts "Do you live in a high rise?"
 	client[:high_rise] = gets.chomp
 
+	puts "Thank you for the information. Do you need to update
+	any entry? y/n"
+		wants_to_update = gets.chomp
+		
+		if wants_to_update == "y"
+			wants_to_update = true
+			puts "Which category would you like to update?"
+			new_category = gets.chomp.to_sym
+				if new_category == :name
+					client[:name] = new_category
+				elsif new_category == :age
+					client[:age] = new_category
+				elsif new_category == :number_of_children
+					client[:number_of_children] = new_category	
+				elsif new_category == :decor_theme
+					client[:decor_theme] = new_category
+				elsif new_category == :number_of_rooms
+					client[:number_of_rooms] = new_category
+				else 
+					new_category == :high_rise
+					client[:high_rise] = new_category
+				end		
 
 
+			#puts "Please type new answer"
+			#client[:new_category] = gets.chomp
+
+		else wants_to_update = false
+			
+		end
+		
+	
 p client
 
