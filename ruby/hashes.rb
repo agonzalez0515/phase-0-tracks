@@ -52,25 +52,21 @@ client = {}
 			puts "Which category would you like to update?"
 			update = gets.chomp.to_sym
 			puts "What is your new answer?"
-			new_ansewer = gets.chomp
+			new_answer = gets.chomp
 				if update == :name
-					client[:name] = new_ansewer
+					client[:name] = new_answer
 				elsif update == :age
-					client[:age] = new_ansewer
+					client[:age] = new_answer
 				elsif update == :number_of_children
-					client[:number_of_children] = new_ansewer	
+					client[:number_of_children] = new_answer	
 				elsif update == :decor_theme
-					client[:decor_theme] = new_ansewer
+					client[:decor_theme] = new_answer
 				elsif update == :number_of_rooms
-					client[:number_of_rooms] = new_ansewer
+					client[:number_of_rooms] = new_answer
 				else 
 					update == :high_rise
-					client[:high_rise] = new_ansewer
+					client[:high_rise] = new_answer
 				end		
-
-
-			#puts "Please type new answer"
-			#client[:update] = gets.chomp
 
 		else wants_to_update = false
 
