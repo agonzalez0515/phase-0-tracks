@@ -19,10 +19,7 @@ switch the two strings' order
 =end
 
 
-
-
-name = "Felicia Torres"
-name.downcase!
+name = ""
 
 #split name into individual characters array and replaces vowels
 #with next one in array
@@ -30,17 +27,15 @@ def vowel_changer(letters)
 	letters_array = letters.split('')
 	vowels = ["a", "e", "i", "o", "u"]
 
-	new_name = letters_array.map! do |letter|
+	letters_array.map! do |letter|
 
 		if vowels.include? letter
 			letter = vowels[vowels.index(letter)+1]
 		else
 			letter
-			
 		end
-		
 	end
-	new_name = letters_array.join('')
+	letters_array.join('')
 end
 
 #split name into individual characters array and replaces consonants
@@ -50,7 +45,7 @@ def consonant_changer(letters2)
 	letters_array2 = letters2.split('')
 	consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
 
-	new_name2 = letters_array2.map! do |letter2|
+	letters_array2.map! do |letter2|
 
 		if consonants.include? letter2
 			letter2 = consonants[consonants.index(letter2)+1]
@@ -58,7 +53,7 @@ def consonant_changer(letters2)
 			letter2
 		end
 	end
-	new_name2 = letters_array2.join('')
+	letters_array2.join('')
 end
 
 
@@ -67,12 +62,36 @@ end
 def two_names(name)
 	final_name = name.split(' ').rotate
 	final_name.map! { |word| word.capitalize! }
-	final_name = final_name.join(' ')
-
+	final_name.join(' ')
 end
 
-p two_names(consonant_changer(vowel_changer(name)))
 
+#create an array from the user input 
+alias_data = []
+loop do
+	puts "Please enter a name"
+	name= gets.chomp.downcase
+	alias_name = two_names(consonant_changer(vowel_changer(name)))
+	puts alias_name
+	alias_data << alias_name
+	
+	break if name == "quit"
+end
+
+p alias_data
+
+#problem is that i'm only storing the alias_name as an array. I want to 
+#store the original name with it's corresponding alias, which means
+#I need a hash. I haven't been able to figure out how to create a new
+#hash from user input.
+
+=begin NOTES
+- I wanted to make a block for .map! and then
+call it in each method so that it wasn't typed inside each time, 
+but I wasn't able to figure it out yet. It would give me an undefined variable error.
+
+- I also still need a way to handle edge cases, "z" and "u".
+=end
 
 
 
