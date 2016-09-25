@@ -28,16 +28,17 @@ client = {}
 	client[:name] = gets.chomp
 
 	puts "Age"
-	client[:age] = gets.chomp
+	client[:age] = gets.chomp.to_i
 
 	puts "How many children do you have?"
-	client[:number_of_children] = gets.chomp
+	client[:number_of_children] = gets.chomp.to_i
 
-	puts "What is your decor theme?"
-	client[:decor_theme] = gets.chomp
+	puts "List 3 decor themes you like."
+	client[:decor_theme] = gets.chomp.split
+
 
 	puts "How many rooms do you have?"
-	client[:number_of_rooms] = gets.chomp
+	client[:number_of_rooms] = gets.chomp.to_i
 
 	puts "Do you live in a high rise?"
 	client[:high_rise] = gets.chomp
@@ -49,28 +50,30 @@ client = {}
 		if wants_to_update == "y"
 			wants_to_update = true
 			puts "Which category would you like to update?"
-			new_category = gets.chomp.to_sym
-				if new_category == :name
-					client[:name] = new_category
-				elsif new_category == :age
-					client[:age] = new_category
-				elsif new_category == :number_of_children
-					client[:number_of_children] = new_category	
-				elsif new_category == :decor_theme
-					client[:decor_theme] = new_category
-				elsif new_category == :number_of_rooms
-					client[:number_of_rooms] = new_category
+			update = gets.chomp.to_sym
+			puts "What is your new answer?"
+			new_ansewer = gets.chomp
+				if update == :name
+					client[:name] = new_ansewer
+				elsif update == :age
+					client[:age] = new_ansewer
+				elsif update == :number_of_children
+					client[:number_of_children] = new_ansewer	
+				elsif update == :decor_theme
+					client[:decor_theme] = new_ansewer
+				elsif update == :number_of_rooms
+					client[:number_of_rooms] = new_ansewer
 				else 
-					new_category == :high_rise
-					client[:high_rise] = new_category
+					update == :high_rise
+					client[:high_rise] = new_ansewer
 				end		
 
 
 			#puts "Please type new answer"
-			#client[:new_category] = gets.chomp
+			#client[:update] = gets.chomp
 
 		else wants_to_update = false
-			
+
 		end
 		
 	
