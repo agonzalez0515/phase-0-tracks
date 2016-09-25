@@ -28,15 +28,16 @@ switch the two strings' order
 =end
 
 
-#split into individual characters array
+#split first name into individual characters array and replaces vowels
+#with next one
 def create_alias(letters)
 	letters_array = letters.split('')
 	vowels = ["a", "e", "i", "o", "u"]
 
-	letters_array.map! do |letter|
+	new_name = letters_array.map! do |letter|
 
 		if vowels.include? letter
-			letter = "x"
+			letter = vowels[vowels.index(letter)+1]
 		else
 			letter
 			
@@ -48,7 +49,6 @@ end
 
 name = "felicia"
 create_alias(name)
-
 
 
 
