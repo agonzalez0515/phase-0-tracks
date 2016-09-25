@@ -30,7 +30,10 @@ switch the two strings' order
 
 #split first name into individual characters array and replaces vowels
 #with next one
-def create_alias(letters)
+first_name = "felicia"
+last_name = "torres"
+
+def vowel_changer(letters)
 	letters_array = letters.split('')
 	vowels = ["a", "e", "i", "o", "u"]
 
@@ -47,10 +50,25 @@ def create_alias(letters)
 	new_name = letters_array.join('')
 end
 
-name = "felicia"
-create_alias(name)
 
 
+def consonant_changer(letters2)
+	letters_array2 = letters2.split('')
+	consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+
+	new_name2 = letters_array2.map! do |letter2|
+
+		if consonants.include? letter2
+			letter2 = consonants[consonants.index(letter2)+1]
+		else
+			letter2
+		end
+	end
+	new_name2 = letters_array2.join('')
+end
+
+p consonant_changer(vowel_changer(first_name))
+p consonant_changer(vowel_changer(last_name))
 
 
 
