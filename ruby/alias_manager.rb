@@ -30,8 +30,8 @@ switch the two strings' order
 
 #split first name into individual characters array and replaces vowels
 #with next one
-first_name = "felicia"
-last_name = "torres"
+name = "felicia torres"
+
 
 def vowel_changer(letters)
 	letters_array = letters.split('')
@@ -67,8 +67,16 @@ def consonant_changer(letters2)
 	new_name2 = letters_array2.join('')
 end
 
-p consonant_changer(vowel_changer(first_name))
-p consonant_changer(vowel_changer(last_name))
+p consonant_changer(vowel_changer(name))
+
+def two_names(name)
+	final_name = name.split(' ').rotate!.join(' ')
+
+end
+
+two_names(consonant_changer(vowel_changer(name)))
+
+
 
 
 
