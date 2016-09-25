@@ -25,48 +25,33 @@ put the array back into a string
 switch the two strings' order
 
 
-
-
-
-first_name = "felicia"
-last_name = "torres"
-
-#split into individual characters array
-def into_chars(name)
-
-	new_name = name.split('')
-	
-end
-
-p into_chars(first_name)
-p into_chars(last_name)
-
-#["f", "e", "l", "i", "c", "i", "a"]
-
-#change the vowels into the next vowel in "aeiou"
-#change the consonant into the next letter in alphabet
-def fake_name(new_name)
-	vowels = "aeiou"
-	alphabet = "bcdfghjklmnpqrstvwxyz"
-	
-	new_name
-	
-
 =end
 
 
 #split into individual characters array
-first_name = "felicia"
-def into_chars(name)
+def create_alias(letters)
+	letters_array = letters.split('')
+	vowels = ["a", "e", "i", "o", "u"]
 
-	letters = name.split('')
-	
+	letters_array.map! do |letter|
+
+		if vowels.include? letter
+			letter = "x"
+		else
+			letter
+			
+		end
+		
+	end
+	new_name = letters_array.join('')
 end
 
-p into_chars(first_name)
+name = "felicia"
+create_alias(name)
 
-#iterate through the letters array with .map
-def changing_letters(letters)
-	letters.map! do |letter|
-		
+
+
+
+
+
 
