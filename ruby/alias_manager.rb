@@ -1,13 +1,6 @@
-=begin
-1.Swapping the first and last name.
-2.Changing all of the vowels (a, e, i, o, or u) to the next 
-vowel in 'aeiou', and all of the consonants 
-(everything else besides the vowels) to the next 
-consonant in the alphabet. So 'a' would become 'e', 
-'u' would become 'a', and 'd' would become 'f'.
 
-"Felicia Torres" will become "Vussit Gimodoe"
-end=
+
+#"Felicia Torres" will become "Vussit Gimodoe"
 
 =begin PSEUDOCODE
 enter name to be changed
@@ -23,16 +16,16 @@ work with one string at a time
 
 put the array back into a string
 switch the two strings' order
-
-
 =end
 
 
-#split first name into individual characters array and replaces vowels
-#with next one
-name = "felicia torres"
 
 
+name = "Felicia Torres"
+name.downcase!
+
+#split name into individual characters array and replaces vowels
+#with next one in array
 def vowel_changer(letters)
 	letters_array = letters.split('')
 	vowels = ["a", "e", "i", "o", "u"]
@@ -50,7 +43,8 @@ def vowel_changer(letters)
 	new_name = letters_array.join('')
 end
 
-
+#split name into individual characters array and replaces consonants
+#with next one in array
 
 def consonant_changer(letters2)
 	letters_array2 = letters2.split('')
@@ -67,15 +61,17 @@ def consonant_changer(letters2)
 	new_name2 = letters_array2.join('')
 end
 
-p consonant_changer(vowel_changer(name))
 
+#split the name with the replaced letters into an array of 2, then switch places
+#of words, and bring back the initial cap
 def two_names(name)
-	final_name = name.split(' ').rotate!.join(' ')
+	final_name = name.split(' ').rotate
+	final_name.map! { |word| word.capitalize! }
+	final_name = final_name.join(' ')
 
 end
 
-two_names(consonant_changer(vowel_changer(name)))
-
+p two_names(consonant_changer(vowel_changer(name)))
 
 
 
