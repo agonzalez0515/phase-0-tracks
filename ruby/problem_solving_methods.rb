@@ -4,13 +4,17 @@ def search(array, int)
 	index = 0
 	while index < array.length
 		if array[index] == int
-			return array[index] - 1
+			return index
 		else
 			nil
 		end
 		index += 1
 	end
 end
+# arr = [1,2,3,4]
+# p search(arr, 3)
+# p search(arr, 5)
+
 
 def fib(num)
 	fib_array = [0, 1]
@@ -21,7 +25,11 @@ def fib(num)
 	end
 	fib_array
 end
+# p fib(100)[99]
 
+
+
+#This is one attempt at release 2 that didn't work.
 def sort(original_array)
 	# sorted_array = [] # Initialize sorted_array
 	# sorted_array << original_array.shift # Push the first element in 'original_array' to 'sorted_array'
@@ -54,8 +62,24 @@ end
 a1 = [1, 5, 3, 9, 4, 6]
 p sort(a1)
 
-# p fib(100)[99]
 
-# arr = [1,2,3,4]
-# p search(arr, 3)
-# p search(arr, 5)
+
+
+
+
+
+#this is a sort that my pair worked on after we were done that he then walked me through
+#a couple of days later.
+def sort_in_place(to_sort)
+    # index starts at one, we can skip the first element, since we would
+    # otherwise take it and place it in the first position, which it already is
+    for index in 0..(to_sort.length - 1)
+        for inner_index in 0..(index - 1)
+            if to_sort[inner_index] >= to_sort[index]
+                to_sort.insert(inner_index, to_sort[index])
+                to_sort.delete_at(index + 1)
+            end
+        end
+    end
+    return to_sort
+ end
