@@ -5,5 +5,13 @@ class Puppy
     toy
   end
 
+  def initialize
+		puts "Initializing Puppy instance..."
+		@toy = stick
+	end
+
 end
 
+fido = Puppy.new
+
+puts fido.fetch
