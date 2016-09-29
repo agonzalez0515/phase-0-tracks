@@ -44,7 +44,11 @@ end
 grocery_hash = create_list("lemonade tomatoes onions ice_cream")
 
 def add_an_item new_item,quantity, grocery_hash
-	grocery_hash[new_item] = quantity
+		if grocery_hash.include? new_item
+			grocery_hash[new_item] += quantity
+		else
+			grocery_hash[new_item] = quantity
+		end
 	p grocery_hash
 end
 
@@ -62,7 +66,11 @@ remove_an_item grocery_hash, "lemonade"
 
 
 def update_quantity grocery_hash, key, value
-	grocery_hash[key] = value
+		if grocery_hash.include? key
+			grocery_hash[key] += value
+		else
+			grocery_hash[key] = value
+		end
 	p grocery_hash
 end
 
@@ -75,8 +83,42 @@ def print_list grocery_hash
 	end
 end
 
+add_an_item "grapes", 5, grocery_hash
+
 print_list grocery_hash
 
+=begin
 
+What did you learn about pseudocode from working on this challenge?
+I did not pseudocode very thoroughly because it feels repetative but I really need to
+change that. It helps to have the steps broken down or else you don't know where to start.
 
+What are the tradeoffs of using arrays and hashes for this challenge?
+I used a hash from the beginning because I knew I had to add values to each item. If I 
+has used an array, I would have needed to turn it into a hash later so it just saved me
+step. It's good to think a couple of steps ahead.  An array would have been easier to use
+because you don't need to worry about having a key AND a value, but the hash just 
+better described my list.
+
+What does a method return?
+A method returns the parameter you feed it after it's gone through each step. The return
+is the last thing that happened in the method. 
+
+What kind of things can you pass into methods as arguments?
+Pretty much any object (strings, integers), including hashes and arrays.
+
+How can you pass information between methods?
+After a method returns something, you then pass that as an argument into the next method.
+My first method created a hash which then I used as my parameter for the rest of my 
+methods to modify.
+
+What concepts were solidified in this challenge, and what concepts are still confusing?	
+This challenge was exactly what I needed in terms of methods. I was having a hard
+time with parameters and how to use arrays as a parameter.  I feel a lot more clear. 
+It also was great to see how one thing is affected by multiple methods.  
+
+I'm still struggling with "creating" items, like the list above. My default is to think
+about driver code and using gets.chomp.
+
+=end
 
