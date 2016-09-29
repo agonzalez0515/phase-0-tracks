@@ -27,6 +27,10 @@ loop do
 
 end
 
+
+#THINK ABOUT HOW TO STORE THE EQUATIONS AND ANSWERS IN A VARIABLE
+#look at this repl and code academy 6/6 https://repl.it/DkPH/1
+
 #puts calculations.each 
 puts calculations
 
