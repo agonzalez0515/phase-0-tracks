@@ -1,9 +1,9 @@
 class Santa
 
-	def initialize
-		#@gender = gender.to_s
-		#@ethnicity = ethnicity.to_s
-		#@age = 0
+	def initialize(gender, ethnicity)
+		@gender = gender
+		@ethnicity = ethnicity
+		@age = 0
 		puts "Initializing Santa instance..."
 	end
 
@@ -18,27 +18,45 @@ class Santa
 	end
 
 	
+	def celebrate_birthday
+		 @age += 1
+		puts "This santa is now #{@age} years old!"
+	end
+
+
+	def get_mad_at(name)
+		reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+	
+		#reindeer_ranking.each do |reindeer|
+		index = reindeer_ranking.index(name)
+			reindeer_ranking.insert(-1, reindeer_ranking.delete_at(index))
+		
+	
+	end
+
 end
 
-santacon = Santa.new
-puts santacon.speak
-puts santacon.eat_milk_and_cookies("oreo")
+santacon = Santa.new("female", "latina")
+santacon.celebrate_birthday
 
-
+#puts santacon.speak
+#puts santacon.eat_milk_and_cookies("oreo")
 
 
 #santas = []
 
 #santas << Santa.new("female", "latina")
 #santas << Santa.new("male", "white")
+#santas << Santa.new("non-binary", "japanese")
+#santas << Santa.new("trans", "native-american")
+#p santas
 
-#puts celebrate_birthday
+
+
+
 
 =begin
-def celebrate_birthday=(age)
-		 @age + 1
-		puts "You are now #{@age} years old!"
-	end
+
 
 
 	def about
@@ -48,10 +66,5 @@ def celebrate_birthday=(age)
 	end
 
 	
-	def get_mad_at(index)
-		reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 	
-		reindeer_ranking.insert(-1, reindeer_ranking.delete_at(index))
-	
-	end
 =end
