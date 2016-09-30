@@ -1,9 +1,9 @@
 class Santa
 
-	def initialize(gender, ethnicity)
-		@gender = gender.to_s
-		@ethnicity = ethnicity.to_s
-		@age = 0
+	def initialize
+		#@gender = gender.to_s
+		#@ethnicity = ethnicity.to_s
+		#@age = 0
 		puts "Initializing Santa instance..."
 	end
 
@@ -17,7 +17,25 @@ class Santa
 		puts "That was a good #{cookie_type}!!"
 	end
 
-	def celebrate_birthday=(age)
+	
+end
+
+santacon = Santa.new
+puts santacon.speak
+puts santacon.eat_milk_and_cookies("oreo")
+
+
+
+
+#santas = []
+
+#santas << Santa.new("female", "latina")
+#santas << Santa.new("male", "white")
+
+#puts celebrate_birthday
+
+=begin
+def celebrate_birthday=(age)
 		 @age + 1
 		puts "You are now #{@age} years old!"
 	end
@@ -36,20 +54,4 @@ class Santa
 		reindeer_ranking.insert(-1, reindeer_ranking.delete_at(index))
 	
 	end
-
-end
-
-
-
-santacon = Santa.new("female", "latina")
-puts santacon.speak
-puts santacon.eat_milk_and_cookies("oreo")
-
-#santas = []
-
-#santas << Santa.new("female", "latina")
-#santas << Santa.new("male", "white")
-
-puts celebrate_birthday
-
-
+=end
