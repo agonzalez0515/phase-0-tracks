@@ -1,6 +1,6 @@
 class Santa 
-	attr_reader :age
-	attr_accessor :gender, :ethnicity
+
+	attr_accessor :gender, :ethnicity, :age
 
 	def initialize
 		@gender = gender
@@ -21,7 +21,6 @@ class Santa
 	
 	def celebrate_birthday
 		 @age += 1
-		puts "This santa is now #{@age} years old!"
 	end
 
 
@@ -65,7 +64,10 @@ end
 
 	my_santa = Santa.new
 	my_santa.random_santas
+	my_santa.age = rand(140)
 	puts "This santa's gender is #{my_santa.gender} and ethnicity is #{my_santa.ethnicity}."
+	puts "This santa is #{my_santa.age} years old."
+	puts "Happy Birthday! This santa is now #{my_santa.celebrate_birthday}."
 	puts "_" * 15 
 end
 
