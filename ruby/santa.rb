@@ -1,5 +1,8 @@
 class Santa
 
+	attr_reader :age, :ethnicity
+	attr_accessor :gender 
+
 	def initialize(gender, ethnicity)
 		@gender = gender
 		@ethnicity = ethnicity
@@ -31,24 +34,20 @@ class Santa
 		reindeer_ranking.insert(-1, reindeer_ranking.delete_at(index))
 	end
 
-	def gender
-		@gender
-	end
+	
 
 	def gender=(new_gender)
 		@gender = new_gender
 	end
 
-	def age
-		@age
-	end
+	
 
-	def ethnicity
-		@ethnicity
-	end
+
 
 end
 
+
+#Driver Code
 santacon = Santa.new("female", "latina")
 santacon.celebrate_birthday
 #puts santacon.speak
@@ -60,7 +59,6 @@ santacon.celebrate_birthday
 p santacon.gender
 santacon.gender = "male"
 puts "This Santa's gender is #{santacon.gender}"
-
 
 puts "This santa is #{santacon.age} years old."
 puts "This sants identifies as #{santacon.ethnicity}."
@@ -74,19 +72,3 @@ puts "This sants identifies as #{santacon.ethnicity}."
 #p santas
 
 
-
-
-
-=begin
-
-
-
-	def about
-		puts "Gender: #{@gender}"
-		puts "ethnicity: #{@ethnicity}"
-
-	end
-
-	
-	
-=end
