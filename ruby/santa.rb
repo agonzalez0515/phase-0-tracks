@@ -61,8 +61,9 @@ p santacon.gender
 santacon.gender = "male"
 puts "This Santa's gender is #{santacon.gender}"
 
-p santacon.age
-p santacon.ethnicity
+
+puts "This santa is #{santacon.age} years old."
+puts "This sants identifies as #{santacon.ethnicity}."
 
 #santas = []
 
