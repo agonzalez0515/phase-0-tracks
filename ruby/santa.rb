@@ -61,7 +61,7 @@ end
 
 #Release 4
 
-5.times do
+100.times do
 
 	my_santa = Santa.new
 	my_santa.random_santas
