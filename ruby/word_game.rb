@@ -8,20 +8,25 @@
 #if !include? ask for another guess and subract 1 from word count
 #end game when word count == 0
 
-class Word_Game
+class Word_game
+	attr_reader :word, :guess_count
 
-	def initialize 
+	def initialize(word) 
     @guess_count = 0
     @is_over = false
+    @word = word
   end
 
-	def guesses(word)
-		@guess_count = word.length
+	def guesses
+		@guess_count = @word.length
 	end
 
-	def word_to_guess(word)
-		secret_word = word.split("")
+	def word_to_guess
+		secret_word = @word.split("")
 	end
 
 end
 
+game_1 = Word_game.new("unicorn")
+p game_1.guesses
+p game_1.word_to_guess
