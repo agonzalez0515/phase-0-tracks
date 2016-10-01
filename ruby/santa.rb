@@ -1,11 +1,14 @@
+
+
 class Santa 
 
 	attr_accessor :gender, :ethnicity, :age
 
-	def initialize
+	def initialize(gender, ethnicity)
 		@gender = gender
 		@ethnicity = ethnicity
 		@age = 0
+		reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 		puts "Initializing Santa instance..."
 	end
 
@@ -25,17 +28,13 @@ class Santa
 
 
 	def get_mad_at(name)
-		reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-	
+
 		index = reindeer_ranking.index(name)
 		reindeer_ranking.insert(-1, reindeer_ranking.delete_at(index))
 	end
 
-	def random_santas
-		example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A", "trans", "non-binary"]
-		example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A", "native-american", "pacic islander"]
-		@gender = example_genders.sample
-		@ethnicity = example_ethnicities.sample
+	def random_age
+	@age = rand(140)
 	end
 	
 end
@@ -60,19 +59,26 @@ end
 
 #Release 4
 
-100.times do
+genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A", "trans", "non-binary"]
+ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A", "native-american", "pacic islander"]
 
-	my_santa = Santa.new
-	my_santa.random_santas
-	my_santa.age = rand(140)
+
+#my_santa = Santa.new(genders.sample, ethnicities.sample)
+#my_santa.random_santas
+#p my_santa
+#p my_santa.gender
+
+
+
+100.times do 
+
+	my_santa = Santa.new(genders.sample, ethnicities.sample)
+	p my_santa.random_age
 	puts "This santa's gender is #{my_santa.gender} and ethnicity is #{my_santa.ethnicity}."
 	puts "This santa is #{my_santa.age} years old."
 	puts "Happy Birthday! This santa is now #{my_santa.celebrate_birthday}."
 	puts "_" * 15 
 end
-
-
-
 
 
 
