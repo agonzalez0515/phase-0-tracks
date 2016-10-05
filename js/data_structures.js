@@ -45,6 +45,6 @@ console.log(newcar2)
 var newcar3 = new Car(2000, false, "blue")
 console.log(newcar3)
 newcar3.repair()
-console.log(newcar3.color)
-console.log(newcar3.year)
+console.log("This car is the color " + newcar3.color)
+console.log("This car is the year "+ newcar3.year)
 	
