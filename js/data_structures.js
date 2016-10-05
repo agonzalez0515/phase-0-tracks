@@ -16,7 +16,7 @@ console.log(horses);
 
 ///////
 
-//different properties of various data types
+
 function Car(year, isHybrid, color) {
 
 	console.log ("Our new car")
@@ -36,15 +36,15 @@ function Car(year, isHybrid, color) {
 
 }
 
-var newcar = new Car(1990, false, "yellow")
-console.log(newcar)
-newcar.repair()
+var newcar = new Car(1990, false, "yellow");
+console.log(newcar);
+newcar.repair();
 
-var newcar2 = new Car(2010, true, "white")
-console.log(newcar2)
-var newcar3 = new Car(2000, false, "blue")
-console.log(newcar3)
-newcar3.repair()
-console.log("This car is the color " + newcar3.color)
-console.log("This car is the year "+ newcar3.year)
+var newcar2 = new Car(2010, true, "white");
+console.log(newcar2);
+var newcar3 = new Car(2000, false, "blue");
+console.log(newcar3);
+newcar3.repair();
+console.log("This car is the color " + newcar3.color);
+console.log("This car is the year "+ newcar3.year);
 	
