@@ -34,5 +34,10 @@ function reverse(string) {
 console.log(reverse("hello"));
 
 
-
+if (5 == 5) {
+console.log("Your word is " + reverse +".");
+} 
+else {
+console.log("Sorry, it doesn't work");
+}
 
