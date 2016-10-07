@@ -8,7 +8,6 @@
 //for each object in the array, count the length
 //compare the length to the word in the string
 //if the word in the string is shorter than the word in the array the new word will replace it
-
 function biggestword(words){
 	var newword = "";
 		
@@ -26,60 +25,74 @@ function biggestword(words){
 
 //Release 1
 //PSEUDOCODE
-//
+//function takes 2 parameters
+//each parameter is going to be an object with key,value pairs
+//iterate through the first object
+//check if any of the pairs in the second object match the first with an equals statement
 
+user1 = {name: "Steven", age: 54, location: "la"};
+user2 = {name: "Tamir", age: 54};
 
-
-function keymatch (array){
-
-
-  if (array[0].name == array[1].name){
-			console.log("true");
-	}
-	else if (array[0].age == array[1].age) {
+for (var key in user1){
+	if (user1[key] === user2[key])
 		console.log("true");
-	}
-	else {
+	else
 		console.log("false");
-	} 
 }
 
 
-var example = [{name: "Steven", age: 6},{name: "Steven", age: 54}];
 
-keymatch(example);
+ 
+
+
+//var example = [{name: "Steven", age: 6},{name: "Steven", age: 54}];
+
 
 
 
 //Release2
 //PSEUDOCODE
-//make an array of the alphabet
 //generate a random number using 1-10 range. this is the length of the word.
+//make an array of the alphabet
 //loop through the alphabet that many times and use another random number (from 1-26) as the index of the letter you want.
 //push that letter into a new array
 //join the array to make a string
 //push string into a word array
-//loop through the whole function the number of times the paramater was
-//print/return? final word array with all the words
+//loop through the whole function the number of times the parameter was
+//print/return final word array with all the words
 
-
-
-RandomLength = Math.floor(Math.random() * 10) + 1; //random number to determine length of random word
-console.log(RandomLength);
-var RandomLetters = [];
-
-for (var i = 0; i < RandomLength; i++){
-	var alphabet = "abcdefghijklmnopqrstuvwxyz";
-	RandomLetters.push(alphabet[Math.floor(Math.random() * 26) + 1]);
+function RandomWords(int){
+	var WordCollection = [];
+	for (var x = 0; x < int; x++){
+	
+		var RandomLength = Math.floor(Math.random() * 10) + 1; //random number to determine length of random word
+		var RandomLetters = [];
+	
+		for (var i = 0; i < RandomLength; i++){
+			var alphabet = "abcdefghijklmnopqrstuvwxyz";
+			RandomLetters.push(alphabet[Math.floor(Math.random() * 26) + 1]);//random letter from the alphabet
+			}
+			RandomLetters = RandomLetters.join("");//create strings and add to array
+			
+	
+	WordCollection.push(RandomLetters);	
 	}
-	RandomLetters.join("");
-	console.log(RandomLetters)
+	console.log(WordCollection);
+	return WordCollection;
+}
 
 
-//DRIVER CODE 
 
-//Release 0
-biggestword(["lon", "long", "longest", "longer"]);
-biggestword(["yo", "hello", "heyo"]);
+//Driver Code for Release 2
+times = 10
+for (var m = 0; m < times; m++){
+	biggestword(RandomWords(8))
+}
+
+
+
+//Driver Code for Release 0
+//biggestword(["lon", "long", "longest", "longer"]);
+//biggestword(["yo", "hello", "heyo"]);
 
 
