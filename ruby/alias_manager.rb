@@ -48,14 +48,17 @@ end
 #create an array from the user input 
 alias_data = {}
 loop do
-	puts "Please enter a name. Type quit if you are done"
+	puts "Please enter a name. Type quit if you are done."
 	name = gets.chomp.downcase
 	alias_name = two_names(changer(name))
-	puts alias_name
-	alias_data[name] = alias_name
+	
+	old_name = name.split.map! { |word| word.capitalize }
+	old_name = old_name.join(' ')
+	alias_data[old_name] = alias_name
 	
 	break if name == "quit"
 end
+
 
 alias_data.each do |key, value|
 	puts "#{key} has a secret name of #{value}."
@@ -67,7 +70,6 @@ end
 PROBLEMS
 - I also still need a way to handle edge cases, "z" and "u".
 - don't need 'quit' inside the hash
-- inputted names are printing downcase
 =end
 
 
