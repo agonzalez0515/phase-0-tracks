@@ -3,57 +3,33 @@
 #"Felicia Torres" will become "Vussit Gimodoe"
 
 =begin PSEUDOCODE
-enter name to be changed
-break name up into into 2 separate strings
-work with one string at a time
-1st string: 
-	split into individual characters array
-	change the vowels into the next vowel in "aeiou"
-	change the consonant into the next letter in alphabet
-
-2nd string:
-	repeat the same as first
-
+Split name into char array. Go through each letter and replace them if they include one of the
+letters in the vowels and consonants.
 put the array back into a string
 switch the two strings' order
 =end
 
 
-name = ""
 
-#split name into individual characters array and replaces vowels
-#with next one in array
-def vowel_changer(letters)
+
+#split name into individual characters array and replaces letters with next one in array
+def changer(letters)
 	letters_array = letters.split('')
 	vowels = ["a", "e", "i", "o", "u"]
-
+	consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+	
 	letters_array.map! do |letter|
 
 		if vowels.include? letter
 			letter = vowels[vowels.index(letter)+1]
+		elsif
+			consonants.include? letter
+			letter = consonants[consonants.index(letter)+1]
 		else
 			letter
 		end
 	end
 	letters_array.join('')
-end
-
-#split name into individual characters array and replaces consonants
-#with next one in array
-
-def consonant_changer(letters2)
-	letters_array2 = letters2.split('')
-	consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
-
-	letters_array2.map! do |letter2|
-
-		if consonants.include? letter2
-			letter2 = consonants[consonants.index(letter2)+1]
-		else
-			letter2
-		end
-	end
-	letters_array2.join('')
 end
 
 
@@ -66,31 +42,34 @@ def two_names(name)
 end
 
 
+###
+
+#DRIVER CODE
 #create an array from the user input 
-alias_data = []
+alias_data = {}
 loop do
-	puts "Please enter a name"
-	name= gets.chomp.downcase
-	alias_name = two_names(consonant_changer(vowel_changer(name)))
-	puts alias_name
-	alias_data << alias_name
+	puts "Please enter a name. Type quit if you are done."
+	name = gets.chomp.downcase
+	alias_name = two_names(changer(name))
+	
+	old_name = name.split.map! { |word| word.capitalize }
+	old_name = old_name.join(' ')
+	alias_data[old_name] = alias_name
 	
 	break if name == "quit"
 end
 
-p alias_data
 
-#problem is that i'm only storing the alias_name as an array. I want to 
-#store the original name with it's corresponding alias, which means
-#I need a hash. I haven't been able to figure out how to create a new
-#hash from user input.
+alias_data.each do |key, value|
+	puts "#{key} has a secret name of #{value}."
+end
 
-=begin NOTES
-- I wanted to make a block for .map! and then
-call it in each method so that it wasn't typed inside each time, 
-but I wasn't able to figure it out yet. It would give me an undefined variable error.
 
+
+=begin
+PROBLEMS
 - I also still need a way to handle edge cases, "z" and "u".
+- don't need 'quit' inside the hash
 =end
 
 
