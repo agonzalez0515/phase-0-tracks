@@ -1,7 +1,4 @@
 //Release 0
-//write a function that takes an array and returns the longest 
-//word or phrase in the array"
-
 //PSEUDOCODE
 //create an empty string to store the word that you are going to compare
 //loop through the array
@@ -29,32 +26,27 @@ function biggestword(words){
 //each parameter is going to be an object with key,value pairs
 //iterate through the first object
 //check if any of the pairs in the second object match the first with an equals statement
+//if there is a match, return true
 
-user1 = {name: "Steven", age: 54, location: "la"};
-user2 = {name: "Tamir", age: 54};
 
-for (var key in user1){
-	if (user1[key] === user2[key])
-		console.log("true");
-	else
-		console.log("false");
+
+function pairMatches(object1, object2){
+  var statement = false;
+	for (var key in object1){
+		if (object2[key] === object1[key])
+			statement = true;
+	}
+	return statement;
 }
 
 
 
- 
-
-
-//var example = [{name: "Steven", age: 6},{name: "Steven", age: 54}];
-
-
-
-
-//Release2
+//Release 2
 //PSEUDOCODE
 //generate a random number using 1-10 range. this is the length of the word.
 //make an array of the alphabet
-//loop through the alphabet that many times and use another random number (from 1-26) as the index of the letter you want.
+//loop through the alphabet that many times and use another random number (from 1-26 since there are 26 letters in the alphabet)
+//use that 1..26 random number as the index of the letter you want.
 //push that letter into a new array
 //join the array to make a string
 //push string into a word array
@@ -83,16 +75,22 @@ function RandomWords(int){
 
 
 
+
+//Driver Code for Release 0
+biggestword(["lon", "long", "longest", "longer"]);
+
+
+//Driver Code for Release 1
+var user1 = {name: "Steven", age: 44, location: "ny", height: "no"};
+var user2 = {name: "Steven", age: 45, location: "la", height: "yes"};
+console.log(pairMatches(user1, user2));
+var user1 = {name: "Mike", age: 44, location: "ny", height: "no"};
+var user2 = {name: "Steven", age: 45, location: "la", height: "yes"};
+console.log(pairMatches(user1, user2));
+
 //Driver Code for Release 2
 times = 10
 for (var m = 0; m < times; m++){
 	biggestword(RandomWords(8))
 }
-
-
-
-//Driver Code for Release 0
-//biggestword(["lon", "long", "longest", "longer"]);
-//biggestword(["yo", "hello", "heyo"]);
-
 
