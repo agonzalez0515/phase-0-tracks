@@ -10,41 +10,31 @@ SELECT users.first_name, users.last_name, reviews.stars, reviews.comment, busine
 FROM users, reviews, businesses
 WHERE business_id = businesses.id AND user_id = users.id;
 
-/// this code also works instead:
-SELECT u.first_name, u.last_name, reviews.stars, reviews.comment, businesses.name
-FROM users u 
-JOIN reviews ON u.id = reviews.user_id 
-JOIN businesses ON reviews.business_id = businesses.id;
-/// end code
+	Mandy|Kaling|4|Awesome!!|Lotus Yoga
+	Angela|Jolie|1|Nope!!|Sushi World
+	Bradford|Pitt|5|THE BEST!!|Lotus Yoga
 
 
-Mandy|Kaling|4|Awesome!!|Lotus Yoga
-Angela|Jolie|1|Nope!!|Sushi World
-Bradford|Pitt|5|THE BEST!!|Lotus Yoga
 
 ###### How do you view the data of all three tables for just one particular business? 
 
-SELECT users.first_name, users.last_name, reviews.stars, reviews.comment, businesses.name FROM users, reviews, businesses
-WHERE businesses.id = 2 AND user_id = users.id;
 
-Mandy|Kaling|4|Awesome!!|Sushi World
-Angela|Jolie|1|Nope!!|Sushi World
-Bradford|Pitt|5|THE BEST!!|Sushi World
-Angela|Jolie|||Sushi World
+SELECT businesses.name, reviews.stars, reviews.comment, users.first_name, users.last_name 
+FROM businesses 
+JOIN reviews 
+ON businesses.id = reviews.business_id 
+JOIN users 
+ON users.id = reviews.user_id 
+WHERE businesses.id = 1;
 
-// We couldn't find out how to not show non-applicable users to a business. It just prints out their review.
-
-///// this next code one doesn't quite work for the previous question... shows applicable users, but all the businesses:
-SELECT u.first_name, u.last_name, reviews.stars, reviews.comment, businesses.name
-FROM users u 
-JOIN businesses ON reviews.business_id = 1
-JOIN reviews ON u.id = reviews.user_id;
-////
+Lotus Yoga|4|Awesome!!|Mandy|Kaling
+Lotus Yoga|5|THE BEST!!|Bradford|Pitt
 
 
 
-
-//////////////////////////////////////////////// 8.4 personal Notes ////////////////////////////
+///////////////////////////// 
+8.4 personal Notes 
+////////////////////////////
 
 INSERT INTO businesses (name) VALUES ("Lotus Yoga");
 INSERT INTO businesses (name) VALUES ("Sushi World");
@@ -71,4 +61,3 @@ CREATE TABLE reviews (
 INSERT INTO reviews (stars, comment, business_id, user_id) VALUES (4, "Awesome!!", 1, 2);
 INSERT INTO reviews (stars, comment, business_id, user_id) VALUES (1, "Nope!!", 2, 3);
 INSERT INTO reviews (stars, comment, business_id, user_id) VALUES (5, "THE BEST!!", 1, 1);
-INSERT INTO reviews (stars, comment, business_id, user_id) VALUES (null, null, null, 3);
