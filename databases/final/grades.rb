@@ -103,9 +103,10 @@ else
 	puts "1: Add student"
 	puts "2: Delete student"
 	puts "3: Check student"
-	puts "4: Quit"
+	puts "4: Print all grades"
+	puts "5: Quit"
 	option = gets.chomp.to_i
-		until option == 4
+		
 			if option == 1
 				puts "Enter full name:"
 				name = gets.chomp
@@ -128,11 +129,12 @@ else
 				puts "Please enter the name of the student you would like to check."
 				name_check = gets.chomp
 				check_student(db, name_check, final_student)
-			
-			else
-			
-			end
-		end
+			elsif option == 4
+				puts final_student
+				
+			else option == 5
+				puts "Thank you for being an awesome teacher!"
+			end	
 end
 
 
