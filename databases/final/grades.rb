@@ -29,6 +29,25 @@ def create_students (db, name, essay_1, essay_2, midterm_1, midterm_2)
 end
 
 #loop that calls method to create a student roster with grades. the names and grades are random.
-30.times do
-  create_students(db, Faker::Name.name, rand(40..100), rand(40..100), rand(40..100), rand(40..100))
+#30.times do
+#  create_students(db, Faker::Name.name, rand(40..100), rand(40..100), rand(40..100), rand(40..100))
+#end
+
+roster = db.execute("SELECT * FROM students")
+#p roster
+
+
+#prints a nicer way to read the roster
+roster.each do |student|
+	puts "#{student['name']} has these grades: #{student['essay_1']}, #{student['essay_2']}, #{student['midterm_1']}, #{student['midterm_2']}."
 end
+
+
+final_grades =[]
+
+roster.each do |student|
+	final_grades << (student['essay_1'] + student['essay_2'] + student['midterm_1'] + student['midterm_2'])/4
+end
+
+p final_grades
+
