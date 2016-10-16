@@ -73,6 +73,20 @@ end
 # hash with each students' final grade
 final_student
 
+finalgrades_cmd = <<-SQL
+  CREATE TABLE IF NOT EXISTS student_final_grades(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255),
+    grade INT
+  );
+SQL
+
+db.execute(finalgrades_cmd)
+
+def create_students (db, name, essay_1, essay_2, midterm_1, midterm_2)
+	db.execute("INSERT INTO students (name, essay_1, essay_2, midterm_1, midterm_2) VALUES (?, ?, ?, ?, ?)", [name, essay_1, essay_2, midterm_1, midterm_2])
+end
+
 # prints a nicer way to read the roster
 def print_grades (roster, final_student)
 	roster.each do |student|
@@ -161,8 +175,7 @@ end
 =begin
 NOTES/NEED TO REFACTOR	
 - can I make a new table for the final grades and then join it with the first table to print a more concise report?
--
-	
+- convert percentages to letter grades?
 =end
 
 
