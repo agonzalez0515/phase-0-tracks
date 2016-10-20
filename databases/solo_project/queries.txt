@@ -1,0 +1,87 @@
+1.
+SELECT * FROM tvshows;
+	1|Grey's Anatomy|13|Ellen Pompeo|true|2
+	2|New Girl|6|Zoey Deschanel|false|3
+	3|Game of Thrones|6|Emilia Clarke|true|5
+	4|Supergirl|2|Melissa Benoist|false|4
+	5|Friends|10|Jennifer Aniston|true|1
+	6|Scandal|4|Kerry Washington|true|2
+	7|House|8|Hugh Laurie|true|3
+	8|Modern Family|8|Sofia Vergara|true|2
+
+
+2.UPDATE tvshows SET main_star="Kit Harrington" WHERE id=3;
+
+3.
+SELECT * FROM tvshows, networks WHERE tvshows.network_id = networks.id;
+
+	1|Grey's Anatomy|13|Ellen Pompeo|true|2|2|ABC
+	2|New Girl|6|Zoey Deschanel|false|3|3|FOX
+	3|Game of Thrones|6|Kit Harrington|true|5|5|HBO
+	4|Supergirl|2|Melissa Benoist|false|4|4|CBS
+	5|Friends|10|Jennifer Aniston|true|1|1|NBC
+	6|Scandal|4|Kerry Washington|true|2|2|ABC
+	7|House|8|Hugh Laurie|true|3|3|FOX
+	8|Modern Family|8|Sofia Vergara|true|2|2|ABC
+
+
+4.
+SELECT tvshows.id,tvshows.show_name, networks.network_id FROM tvshows JOIN networks ON tvshows.network_id = networks.id;
+
+	1|Grey's Anatomy|ABC
+	2|New Girl|FOX
+	3|Game of Thrones|HBO
+	4|Supergirl|CBS
+	5|Friends|NBC
+	6|Scandal|ABC
+	7|House|FOX
+	8|Modern Family|ABC	
+
+SELECT tvshows.show_name, tvshows.total_seasons, networks.network_id FROM tvshows JOIN networks ON tvshows.network_id = networks.id;
+	Grey's Anatomy|13|ABC
+	New Girl|6|FOX
+	Game of Thrones|6|HBO
+	Supergirl|2|CBS
+	Friends|10|NBC
+	Scandal|4|ABC
+	House|8|FOX
+	Modern Family|8|ABC
+
+5. 
+Deleting the rows that have not won an emmy
+DELETE FROM tvshows WHERE id=2;
+DELETE FROM tvshows WHERE id=4;
+	1|Grey's Anatomy|13|Ellen Pompeo|true|2
+	3|Game of Thrones|6|Kit Harrington|true|5
+	5|Friends|10|Jennifer Aniston|true|1
+	6|Scandal|4|Kerry Washington|true|2
+	7|House|8|Hugh Laurie|true|3
+	8|Modern Family|8|Sofia Vergara|true|2
+
+
+Release 3
+//Try a few different joins in your database, and record the commands and the output in queries.txt.
+
+SELECT tvshows.show_name, tvshows.total_seasons, main_star 
+FROM tvshows
+LEFT JOIN networks
+ON tvshows.network_id = networks.id;
+
+	Grey's Anatomy|13|Ellen Pompeo
+	Game of Thrones|6|Kit Harrington
+	Friends|10|Jennifer Aniston
+	Scandal|4|Kerry Washington
+	House|8|Hugh Laurie
+	Modern Family|8|Sofia Vergara
+
+SELECT tvshows.show_name, tvshows.total_seasons, main_star 
+FROM tvshows
+INNER JOIN networks
+ON tvshows.network_id = networks.id;
+
+	Grey's Anatomy|13|Ellen Pompeo
+	Game of Thrones|6|Kit Harrington
+	Friends|10|Jennifer Aniston
+	Scandal|4|Kerry Washington
+	House|8|Hugh Laurie
+	Modern Family|8|Sofia Vergara
