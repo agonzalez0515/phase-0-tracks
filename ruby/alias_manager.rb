@@ -50,13 +50,14 @@ alias_data = {}
 loop do
 	puts "Please enter a name. Type quit if you are done."
 	name = gets.chomp.downcase
+	break if name == "quit"
 	alias_name = two_names(changer(name))
 	
 	old_name = name.split.map! { |word| word.capitalize }
 	old_name = old_name.join(' ')
 	alias_data[old_name] = alias_name
 	
-	break if name == "quit"
+	
 end
 
 
