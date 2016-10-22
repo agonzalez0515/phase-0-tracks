@@ -22,9 +22,19 @@ def changer(letters)
 
 		if vowels.include? letter
 			letter = vowels[vowels.index(letter)+1]
+			if letter==nil
+				letter ="a"
+			else
+				letter
+			end
 		elsif
 			consonants.include? letter
 			letter = consonants[consonants.index(letter)+1]
+			if letter == nil
+				letter = "b"
+			else
+				letter
+			end
 		else
 			letter
 		end
@@ -65,13 +75,6 @@ alias_data.each do |key, value|
 	puts "#{key} has a secret name of #{value}."
 end
 
-
-
-=begin
-PROBLEMS
-- I also still need a way to handle edge cases, "z" and "u".
-- don't need 'quit' inside the hash
-=end
 
 
 
