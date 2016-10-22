@@ -22,9 +22,19 @@ def changer(letters)
 
 		if vowels.include? letter
 			letter = vowels[vowels.index(letter)+1]
+			if letter==nil
+				letter ="a"
+			else
+				letter
+			end
 		elsif
 			consonants.include? letter
 			letter = consonants[consonants.index(letter)+1]
+			if letter == nil
+				letter = "b"
+			else
+				letter
+			end
 		else
 			letter
 		end
@@ -50,13 +60,14 @@ alias_data = {}
 loop do
 	puts "Please enter a name. Type quit if you are done."
 	name = gets.chomp.downcase
+	break if name == "quit"
 	alias_name = two_names(changer(name))
 	
 	old_name = name.split.map! { |word| word.capitalize }
 	old_name = old_name.join(' ')
 	alias_data[old_name] = alias_name
 	
-	break if name == "quit"
+	
 end
 
 
@@ -64,13 +75,6 @@ alias_data.each do |key, value|
 	puts "#{key} has a secret name of #{value}."
 end
 
-
-
-=begin
-PROBLEMS
-- I also still need a way to handle edge cases, "z" and "u".
-- don't need 'quit' inside the hash
-=end
 
 
 
