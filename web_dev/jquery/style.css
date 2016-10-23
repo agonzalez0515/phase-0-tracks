@@ -1,0 +1,138 @@
+body {
+	max-width:100%;
+
+}
+
+header > h1 {
+	font-family: helvetica;
+	font-size: 40px;
+	border-bottom: 2px dotted;
+	border-bottom-color: red;
+	padding-bottom: 10px;
+
+}
+
+
+.top-links {
+	list-style-type: none;
+	margin:0px;
+	padding:2px;
+	overflow: hidden;
+	background: #4d94ff;
+	}
+
+nav ul li {
+    display: inline-block;
+    border-right: 2px solid white;
+    margin: 5px;
+    text-align: center;
+
+}
+
+
+li a {
+	display: block;
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	font-family: Georgia;
+	text-align: center;
+	padding: 7px;
+	
+}
+
+li a:visited {
+    color: red;
+}
+
+h2 {
+	display: inline; 
+	padding: 2px;
+	position: relative;
+	top: 45px;
+	left: 105px;
+	color: white;
+
+}
+.intro {
+	font-size: 17px;
+	font-family: helvetica;
+	width: 800px;
+	border: 2px solid #4d94ff;
+	border-top: 25px solid #4d94ff;
+	border-radius: 4px;
+	padding: 20px;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+	display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+h3, h4 {
+	text-align: center;
+	border-top: 1px solid red;
+	border-bottom: 1px solid red;
+	padding: 6px;
+	font-size: 25px;
+}
+
+#roster ul {
+	display: inline-block;
+	position: relative;
+	left:400px;
+	font-size: 18px;
+	margin-left: 4px;
+	margin-right: 20px;
+	padding: 20px;
+
+}
+
+.belt {
+	background-image: url("belt.png");
+	background-repeat: no-repeat;
+	background-blend-mode: lighten;
+}
+
+h5 {
+	text-decoration: underline;
+	font-size: 18px;
+}
+
+
+table {
+	border-collapse: collapse;
+	width: 600px;
+	font-family: helvetica;
+	margin-left: auto; 
+  margin-right: auto;
+
+}
+
+.moveset {
+	height: 300px;
+
+}
+
+
+th, td {
+	border: 1px solid black;
+}
+
+th{
+	background-color: #4d94ff;
+}
+
+@media screen and (max-width: 840px) {
+  body {
+
+    font-size: .2em;  
+  }
+
+}
+
+
